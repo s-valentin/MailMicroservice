@@ -1,4 +1,4 @@
-package ro.uaic.info.MailMicroService;
+package ro.uaic.info.MailApplication;
 
 public class Mailbox {
 
