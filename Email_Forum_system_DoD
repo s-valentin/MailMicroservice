@@ -1,0 +1,21 @@
+When we talk about Product Development, the Definition of Done(DoD) it consists of 3 main categories: Functional, Quality and Non-Functional requirements.
+
+In order for the microservice to be considered "Done" for the functional requirements, the next criterias have to be followed:
+	-users can sucessfully send mails to eachother in order to communicate
+	-users can send attachments via mail to other users
+	-users can access the forum section in order to ask or respond to other user's questions
+	-users in the forum section can give feedback for the answer, if they think it's a reliable information
+
+In order for the microservice to be considered "Done" for the quality requirements, the next criterias have to be followed:
+	-there has to be a unit test coverage over 80%
+	-no known defects
+	-implementing design principles
+	-maintability
+
+In order for the microservice to be considered "Done" for the Non-Functional requirements, the next criterias have to be followed:
+	-scalability: to properly support a higher loading volume
+	-usability: the system has to be easy for the usage of a user
+	-legal: the system has to follow the laws, for protecting the user's data
+	-reliablity: the system must be optimized to not crash or to encounter problems 
+	-performance: the system has to run correctly without any delays
+	-security: the data of the users have to be protected
