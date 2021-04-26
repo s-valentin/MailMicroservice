@@ -65,8 +65,8 @@ public class MailController {
 
        // helper.setText("Attach file here: ", true);
 
-        FileSystemResource file = new FileSystemResource(new File("K:\\Materiale facultate\\Cracking the Coding Interview-4ed.pdf"));
-        helper.addAttachment("Cracking the Coding Interview-4ed.pdf", file);
+        FileSystemResource file = new FileSystemResource(new File(mailAttachment.getAttachment()));
+        helper.addAttachment(mailAttachment.getAttachmentName(), file);
 
         mailSender.send(message);
         return "result";

@@ -10,7 +10,9 @@ public class Mail {
     private String to;
     private String subject;
     private String content;
+    private String attachment;
     private LocalDate date;
+
     private boolean isRead;
     private MailType type;
 
@@ -64,4 +66,16 @@ public class Mail {
     }
 
     public boolean isRead() { return isRead; }
+
+    public String getAttachment() {
+        return attachment;
+    }
+    public String getAttachmentName(){
+        String[] strings= this.attachment.split("\\\\");
+        return strings[strings.length-1];
+    }
+
+    public void setAttachment(String attachment) {
+        this.attachment = attachment;
+    }
 }
