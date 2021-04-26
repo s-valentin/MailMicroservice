@@ -4,16 +4,18 @@ import java.time.LocalDate;
 
 public class Mail {
 
-    private MailAddress from;
-    private MailAddress to;
+//    private MailAddress from;
+//    private MailAddress to;
+    private String from;
+    private String to;
     private String subject;
     private String content;
     private LocalDate date;
     private boolean isRead;
     private MailType type;
 
-    public Mail(MailAddress from,
-                MailAddress to,
+    public Mail(String from,
+                String to,
                 String subject,
                 String content) {
         this.from = from;
@@ -25,19 +27,19 @@ public class Mail {
         isRead = false;
     }
 
-    public MailAddress getFrom() {
+    public String getFrom() {
         return from;
     }
 
-    public void setFrom(MailAddress from) {
+    public void setFrom(String from) {
         this.from = from;
     }
 
-    public MailAddress getTo() {
+    public String getTo() {
         return to;
     }
 
-    public void setTo(MailAddress to) {
+    public void setTo(String to) {
         this.to = to;
     }
 
@@ -62,17 +64,4 @@ public class Mail {
     }
 
     public boolean isRead() { return isRead; }
-
-    @Override
-    public String toString() {
-        return "Mail{" +
-                "from=" + from.getEmail() +
-                ", to=" + to.getEmail() +
-                ", subject='" + subject + '\'' +
-                ", content='" + content + '\'' +
-                ", date=" + date +
-                ", isRead=" + isRead +
-                ", type=" + type +
-                '}' + "\n";
-    }
 }
