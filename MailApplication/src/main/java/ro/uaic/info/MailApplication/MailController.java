@@ -2,14 +2,19 @@ package ro.uaic.info.MailApplication;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import java.io.File;
 import java.util.List;
 import java.util.Properties;
 
@@ -46,6 +51,27 @@ public class MailController {
 
         return "result";
     }
+
+    @PostMapping("/send_email_attachment")
+    public String sendHTMLEmailWithAttachment(@RequestBody Mail mailAttachment) throws MessagingException {
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message, true);
+
+        helper.setSubject(mailAttachment.getSubject());
+        helper.setFrom(mailAttachment.getFrom());
+        helper.setTo(mailAttachment.getTo());
+        helper.setText(mailAttachment.getContent());
+
+       // helper.setText("Attach file here: ", true);
+
+        FileSystemResource file = new FileSystemResource(new File("K:\\Materiale facultate\\Cracking the Coding Interview-4ed.pdf"));
+        helper.addAttachment("Cracking the Coding Interview-4ed.pdf", file);
+
+        mailSender.send(message);
+        return "result";
+    }
+
 
     @PostMapping("/request")
     public ResponseEntity postController(
