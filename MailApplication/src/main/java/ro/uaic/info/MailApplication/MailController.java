@@ -24,6 +24,8 @@ public class MailController {
     @Autowired
     private static JavaMailSenderImpl mailSender;
 
+    private static MailReceive mailbox;
+
     @BeforeAll
     public static void setup() {
         mailSender = new JavaMailSenderImpl();
@@ -72,6 +74,19 @@ public class MailController {
         return "result";
     }
 
+    @PostMapping("/requestpop")
+    public ResponseEntity postController(
+            @RequestBody MailPOPcfg user) {
+        System.out.println(user.port);
+        System.out.println(user.host);
+        System.out.println(user.mailStoreType);
+        System.out.println(user.username);
+        System.out.println(user.password);
+
+        mailbox.receiveEmail(user.host,Integer.toString(user.port) ,user.mailStoreType,user.username,user.password );
+
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
 
     @PostMapping("/request")
     public ResponseEntity postController(
