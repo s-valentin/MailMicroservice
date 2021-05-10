@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MailMicroservice.iml" filepath="$PROJECT_DIR$/.idea/MailMicroservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MailApplication.iml" filepath="$PROJECT_DIR$/MailApplication.iml" />
     </modules>
   </component>
 </project>
