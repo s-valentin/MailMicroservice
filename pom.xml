@@ -14,7 +14,7 @@
 	<name>MailApplication</name>
 	<description>Spring boot implementation of the Mail Application</description>
 	<properties>
-		<java.version>15</java.version>
+		<java.version>1.7</java.version>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 	</properties>
@@ -60,10 +60,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>15</source>
-					<target>15</target>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
