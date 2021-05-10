@@ -14,7 +14,7 @@
 	<name>MailApplication</name>
 	<description>Spring boot implementation of the Mail Application</description>
 	<properties>
-		<java.version>16</java.version>
+		<java.version>15</java.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
